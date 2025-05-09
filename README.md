@@ -16,14 +16,6 @@ budget. Our results show how this approach reduces reliance on extensive labeled
 in imbalanced data. This work highlights the potential of integrating sparse AutoEncoders with similarity-based active learning as
 a robust solution for anomaly detection tasks, with a particular emphasis on tracking advanced cyber threats like APTs.
 
-# Architecture 
-![Alt text](https://github.com/aladaen/aladaen-apt/blob/main/figures/aladaenarchitecture.png "General Architecture")
-
-
-# Workflow 
-
-![Alt text](https://github.com/aladaen/aladaen-apt/blob/main/figures/aladaenworkflow.png "General Architecture")
-
 # ADAEN APT-AutoEncoders 
 
 Run the script:
