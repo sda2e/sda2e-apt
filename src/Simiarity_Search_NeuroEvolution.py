@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 # ---------------------------------------------------------
-# 0) NDCG IMPLEMENTATION
+# 0) nDCG IMPLEMENTATION
 # ---------------------------------------------------------
 
 def ndcg_at_k(y_true, scores, k=None):
@@ -31,8 +31,15 @@ def ndcg_at_k(y_true, scores, k=None):
 # 1) LOAD DARPA DATA AND CREATE LABELS
 # ---------------------------------------------------------
 
-input_path = "/Users/skynet/Documents/Projects/GAN/Machine-Intelligence-v1.0/data/Engagement_1/cadets/pandex/ProcessEvent.csv"
-groundtruth_path = "/Users/skynet/Documents/Projects/GAN/Machine-Intelligence-v1.0/data/Engagement_1/cadets/pandex/cadets_pandex_webshell.csv"
+input_path = "./data/E2/cadets/pandex/ProcessEvent.csv"
+#"./data/E2/cadets/pandex/ProcessAll.csv"
+#"./data/E2/cadets/pandex/ProcessExec.csv"
+#"./data/E2/cadets/pandex/ProcessParent.csv"
+#"./data/E2/cadets/pandex/ProcessNetflow.csv"
+
+
+#####load ground truth
+groundtruth_path = "./data/E2/cadets/pandex/cadets_pandex_webshell.csv"
 
 print("Loading data...")
 _processes = pd.read_csv(input_path)
@@ -217,6 +224,7 @@ if __name__ == "__main__":
 
     best_ind, best_auc, best_ndcg, best_model, ndcg_progress = neuro_evolution_baseline(
         X_train, X_val, y_val,
+         #pop_size=100, generations=500,
         pop_size=80, generations=30,
         batch_size=256, epochs=30,
         device=device,
